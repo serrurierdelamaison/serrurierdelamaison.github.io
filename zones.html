@@ -431,6 +431,10 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
   body{padding-bottom:0;}
   .barre{display:none;}
 }
+.carte-zone{margin-top:var(--e3);border:1px solid var(--gris);border-radius:var(--r);overflow:hidden;box-shadow:var(--o1);background:var(--gris-c);}
+.carte-zone iframe{display:block;width:100%;height:320px;border:0;}
+@media (min-width:760px){.carte-zone iframe{height:420px;}}
+.carte-lien{margin-top:8px;font-size:13.5px;}
 </style>
 </head>
 <body>
@@ -468,6 +472,15 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
     </a>
   </div>
 </div>
+
+<section>
+  <div class="wrap">
+    <h2>Notre adresse</h2>
+    <p>Serrurier de la Maison · 40 rue Alexandre Dumas, 75011 Paris. On se déplace dans tout Paris et en Île-de-France.</p>
+    <div class="carte-zone"><iframe title="Carte : Serrurier de la Maison, 40 rue Alexandre Dumas, 75011 Paris" src="https://maps.google.com/maps?q=40%20rue%20Alexandre%20Dumas%2C%2075011%20Paris&amp;z=13&amp;hl=fr&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <p class="carte-lien"><a href="https://www.google.com/maps/search/?api=1&amp;query=40%20rue%20Alexandre%20Dumas%2C%2075011%20Paris" rel="noopener" target="_blank">Ouvrir dans Google Maps</a></p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
