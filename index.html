@@ -286,7 +286,8 @@ section + section{padding-top:0;}
   border-radius:var(--r);box-shadow:var(--o1);overflow:hidden;}
 .photos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
 .photos figcaption{padding:10px 14px;font-size:13.5px;color:var(--encre-d);}
-@media (min-width:880px){.photos{grid-template-columns:repeat(4,1fr);}}
+.photos .photo-une{grid-column:1 / -1;}
+@media (min-width:880px){.photos{grid-template-columns:repeat(5,1fr);}.photos .photo-une{grid-column:auto;}}
 .photo-large{border:1px solid var(--gris);border-radius:var(--r);
   box-shadow:var(--o2);overflow:hidden;margin-top:var(--e3);}
 .photo-large img{width:100%;aspect-ratio:16/9;object-fit:cover;}
@@ -517,7 +518,7 @@ function envoiRappel(f){
   <div class="wrap-large">
     <p class="kicker">En images</p>
     <h2>Nos interventions</h2>
-    <div class="photos"><figure><img src="photos/serrure-demontee.jpg" alt="Serrure en applique démontée pour réparation" loading="lazy" width="1000" height="750"><figcaption>Réparation d'une serrure en applique</figcaption></figure><figure><img src="photos/serrure-applique.jpg" alt="Serrure en applique 3 points avec poignée et verrou" loading="lazy" width="1000" height="750"><figcaption>Serrure 3 points en place</figcaption></figure><figure><img src="photos/decoupe-disqueuse.jpg" alt="Découpe à la disqueuse lors d'une intervention" loading="lazy" width="1000" height="750"><figcaption>Découpe sur une porte métallique</figcaption></figure><figure><img src="photos/outillage.jpg" alt="Outillage du serrurier sur le lieu d'intervention" loading="lazy" width="1000" height="750"><figcaption>Notre outillage sur place</figcaption></figure></div>
+    <div class="photos"><figure class="photo-une"><img src="photos/cylindre-pose.jpg" alt="Cylindre de sécurité et poignée posés sur une porte" loading="lazy" width="1000" height="750"><figcaption>Cylindre de sécurité posé</figcaption></figure><figure><img src="photos/serrure-demontee.jpg" alt="Serrure en applique démontée pour réparation" loading="lazy" width="1000" height="750"><figcaption>Réparation d'une serrure en applique</figcaption></figure><figure><img src="photos/serrure-applique.jpg" alt="Serrure en applique 3 points avec poignée et verrou" loading="lazy" width="1000" height="750"><figcaption>Serrure 3 points en place</figcaption></figure><figure><img src="photos/decoupe-disqueuse.jpg" alt="Découpe à la disqueuse lors d'une intervention" loading="lazy" width="1000" height="750"><figcaption>Découpe sur une porte métallique</figcaption></figure><figure><img src="photos/outillage.jpg" alt="Outillage du serrurier sur le lieu d'intervention" loading="lazy" width="1000" height="750"><figcaption>Notre outillage sur place</figcaption></figure></div>
   </div>
 </section>
 
