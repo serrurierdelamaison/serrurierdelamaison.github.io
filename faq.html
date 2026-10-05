@@ -398,7 +398,9 @@ ul.puces li strong{color:var(--encre);font-weight:700;}
 /* ---------- PIED ---------- */
 footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);font-size:15px;}
 .pied-cols{display:flex;flex-wrap:wrap;gap:var(--e4);}
-.pied-col{flex:1 1 190px;}
+.pied-col{flex:1 1 140px;}
+.pied-col:first-child{flex-basis:100%;}
+@media (min-width:760px){.pied-col:first-child{flex-basis:190px;}}
 .pied-col .t{font-size:12px;letter-spacing:.09em;text-transform:uppercase;
   font-weight:700;color:#fff;margin-bottom:11px;}
 .pied-col ul{list-style:none;}
@@ -431,6 +433,11 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
   body{padding-bottom:0;}
   .barre{display:none;}
 }
+.qr summary{cursor:pointer;list-style:none;font-size:17px;font-weight:700;color:var(--bleu-f);letter-spacing:-.015em;
+  display:flex;justify-content:space-between;gap:12px;align-items:baseline;}
+.qr summary::-webkit-details-marker{display:none;}
+.qr summary::after{content:"+";font-size:22px;font-weight:600;color:var(--bleu);line-height:1;}
+.qr[open] summary::after{content:"–";}
 </style>
 </head>
 <body>
@@ -471,58 +478,58 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
 
 <section>
   <div class="wrap">
-    <div class="qr">
-      <h3>Vous intervenez vraiment la nuit ?</h3>
+    <details class="qr">
+      <summary>Vous intervenez vraiment la nuit ?</summary>
       <p>Oui, 24h/24, week-ends et jours fériés compris. Les interventions de nuit et de week-end sont majorées, comme partout dans le métier, et la majoration est comprise dans le prix qu'on vous annonce.</p>
-    </div>
-    <div class="qr">
-      <h3>Combien de temps pour arriver ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Combien de temps pour arriver ?</summary>
       <p>Comptez 20 à 30 minutes dans Paris intra-muros, davantage en proche et grande couronne. On vous donne un délai précis au téléphone avant de partir, et on vous prévient si on prend du retard. On préfère annoncer quarante minutes et arriver en trente que l'inverse.</p>
-    </div>
-    <div class="qr">
-      <h3>Vos interventions sont-elles garanties ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Vos interventions sont-elles garanties ?</summary>
       <p>Oui. Toute serrure, tout cylindre et tout verrou que nous posons sont garantis deux ans, pièces et main-d'œuvre. La garantie est inscrite sur votre facture. Si la pièce lâche ou si la pose est en cause, nous revenons sans vous facturer la main-d'œuvre ni le déplacement.</p>
-    </div>
-    <div class="qr">
-      <h3>Êtes-vous assurés ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Êtes-vous assurés ?</summary>
       <p>Oui. L'entreprise est couverte par une responsabilité civile professionnelle, qui inclut les dommages aux biens qui nous sont confiés — c'est-à-dire votre porte. L'attestation vous est communiquée sur simple demande.</p>
-    </div>
-    <div class="qr">
-      <h3>Est-ce que vous allez casser ma serrure ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Est-ce que vous allez casser ma serrure ?</summary>
       <p>On essaie toujours d'ouvrir sans détruire. Ce n'est pas toujours possible — une serrure déjà forcée, grippée, ou conçue pour résister peut imposer le perçage. Dans ce cas on vous l'explique et on vous donne le coût du remplacement avant de percer.</p>
-    </div>
-    <div class="qr">
-      <h3>J'ai perdu mes clés. Est-ce que l'ouverture suffit ?</h3>
+    </details>
+    <details class="qr">
+      <summary>J'ai perdu mes clés. Est-ce que l'ouverture suffit ?</summary>
       <p>Non, pas si elles sont vraiment perdues ou volées. Tant que le cylindre n'est pas changé, ces clés ouvrent toujours chez vous. On vous le dira, et vous déciderez.</p>
-    </div>
-    <div class="qr">
-      <h3>Et si vous n'arrivez pas dans le délai annoncé ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Et si vous n'arrivez pas dans le délai annoncé ?</summary>
       <p>On vous appelle pour vous le dire, avec la nouvelle heure. Vous êtes libre d'annuler à ce moment-là, vous ne devez rien. On préfère perdre une intervention que vous laisser attendre sans nouvelles derrière une porte.</p>
-    </div>
-    <div class="qr">
-      <h3>Et si vous abîmez ma porte ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Et si vous abîmez ma porte ?</summary>
       <p>L'entreprise est couverte par une responsabilité civile professionnelle qui inclut les dommages aux biens confiés, c'est-à-dire votre porte et votre serrure. En cas de dégât de notre fait, c'est l'assurance qui prend en charge la remise en état, pas vous. L'attestation vous est communiquée sur simple demande.</p>
-    </div>
-    <div class="qr">
-      <h3>Le prix sur place peut-il être plus élevé qu'au téléphone ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Le prix sur place peut-il être plus élevé qu'au téléphone ?</summary>
       <p>Il peut l'être si la réalité ne correspond pas à ce que vous nous avez décrit — une serrure multipoints annoncée comme simple, une porte déjà forcée par quelqu'un d'autre. Dans ce cas on vous le dit avant de commencer, et vous décidez. Ce qui n'arrive jamais chez nous : découvrir le prix une fois le travail fait.</p>
-    </div>
-    <div class="qr">
-      <h3>Comment je peux payer ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Comment je peux payer ?</summary>
       <p>Carte bancaire sur place, à toute heure. Une facture vous est remise systématiquement, quel que soit le montant et quelle que soit l'heure.</p>
-    </div>
-    <div class="qr">
-      <h3>Est-ce que mon assurance rembourse ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Est-ce que mon assurance rembourse ?</summary>
       <p>Beaucoup de contrats d'assurance habitation couvrent tout ou partie d'une ouverture de porte ou d'un remplacement de serrure après effraction. C'est votre facture qui servira de justificatif, d'où l'importance qu'elle soit remise systématiquement.</p>
-    </div>
-    <div class="qr">
-      <h3>Vous travaillez avec quelles marques ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Vous travaillez avec quelles marques ?</summary>
       <p>Fichet, Bricard, Héraclès, Picard, Vachette, Mul-T-Lock, JPM, Abus. Si la marque est lisible sur la têtière de votre serrure, dites-la au téléphone : ça permet souvent de réparer ou de ne remplacer qu'une pièce.</p>
-    </div>
-    <div class="qr">
-      <h3>Vous intervenez pour les professionnels ?</h3>
+    </details>
+    <details class="qr">
+      <summary>Vous intervenez pour les professionnels ?</summary>
       <p>Oui. Syndics, gardiens d'immeuble, agences, conciergeries et commerces : appelez au même numéro, on met en place les conditions adaptées à un volume régulier.</p>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -570,10 +577,6 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>
-    </div>
-    <div class="pied-arr">
-      <div class="t">Serrurier par arrondissement</div>
-      <a href="paris-1.html">Paris 1er</a> <a href="paris-2.html">Paris 2e</a> <a href="paris-3.html">Paris 3e</a> <a href="paris-4.html">Paris 4e</a> <a href="paris-5.html">Paris 5e</a> <a href="paris-6.html">Paris 6e</a> <a href="paris-7.html">Paris 7e</a> <a href="paris-8.html">Paris 8e</a> <a href="paris-9.html">Paris 9e</a> <a href="paris-10.html">Paris 10e</a> <a href="paris-11.html">Paris 11e</a> <a href="paris-12.html">Paris 12e</a> <a href="paris-13.html">Paris 13e</a> <a href="paris-14.html">Paris 14e</a> <a href="paris-15.html">Paris 15e</a> <a href="paris-16.html">Paris 16e</a> <a href="paris-17.html">Paris 17e</a> <a href="paris-18.html">Paris 18e</a> <a href="paris-19.html">Paris 19e</a> <a href="paris-20.html">Paris 20e</a>
     </div>
     <div class="pied-bas">
       <span>Serrurier de la Maison — Paris et Île-de-France</span>

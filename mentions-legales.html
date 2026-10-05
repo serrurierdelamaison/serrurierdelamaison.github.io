@@ -398,7 +398,9 @@ ul.puces li strong{color:var(--encre);font-weight:700;}
 /* ---------- PIED ---------- */
 footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);font-size:15px;}
 .pied-cols{display:flex;flex-wrap:wrap;gap:var(--e4);}
-.pied-col{flex:1 1 190px;}
+.pied-col{flex:1 1 140px;}
+.pied-col:first-child{flex-basis:100%;}
+@media (min-width:760px){.pied-col:first-child{flex-basis:190px;}}
 .pied-col .t{font-size:12px;letter-spacing:.09em;text-transform:uppercase;
   font-weight:700;color:#fff;margin-bottom:11px;}
 .pied-col ul{list-style:none;}
@@ -550,10 +552,6 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>
-    </div>
-    <div class="pied-arr">
-      <div class="t">Serrurier par arrondissement</div>
-      <a href="paris-1.html">Paris 1er</a> <a href="paris-2.html">Paris 2e</a> <a href="paris-3.html">Paris 3e</a> <a href="paris-4.html">Paris 4e</a> <a href="paris-5.html">Paris 5e</a> <a href="paris-6.html">Paris 6e</a> <a href="paris-7.html">Paris 7e</a> <a href="paris-8.html">Paris 8e</a> <a href="paris-9.html">Paris 9e</a> <a href="paris-10.html">Paris 10e</a> <a href="paris-11.html">Paris 11e</a> <a href="paris-12.html">Paris 12e</a> <a href="paris-13.html">Paris 13e</a> <a href="paris-14.html">Paris 14e</a> <a href="paris-15.html">Paris 15e</a> <a href="paris-16.html">Paris 16e</a> <a href="paris-17.html">Paris 17e</a> <a href="paris-18.html">Paris 18e</a> <a href="paris-19.html">Paris 19e</a> <a href="paris-20.html">Paris 20e</a>
     </div>
     <div class="pied-bas">
       <span>Serrurier de la Maison — Paris et Île-de-France</span>

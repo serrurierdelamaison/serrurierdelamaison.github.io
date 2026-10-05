@@ -398,7 +398,9 @@ ul.puces li strong{color:var(--encre);font-weight:700;}
 /* ---------- PIED ---------- */
 footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);font-size:15px;}
 .pied-cols{display:flex;flex-wrap:wrap;gap:var(--e4);}
-.pied-col{flex:1 1 190px;}
+.pied-col{flex:1 1 140px;}
+.pied-col:first-child{flex-basis:100%;}
+@media (min-width:760px){.pied-col:first-child{flex-basis:190px;}}
 .pied-col .t{font-size:12px;letter-spacing:.09em;text-transform:uppercase;
   font-weight:700;color:#fff;margin-bottom:11px;}
 .pied-col ul{list-style:none;}
@@ -503,15 +505,6 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
 
 <section>
   <div class="wrap">
-    <h2>Pourquoi un prix de départ et pas un prix fixe</h2>
-    <p>Deux portes claquées identiques en apparence peuvent demander cinq minutes ou une heure, selon la serrure, l'état du bâti et ce que quelqu'un a essayé avant nous.</p>
-    <p>Ce qu'on vous donne au téléphone, c'est une estimation à partir de ce que vous décrivez. Le prix définitif, on vous le donne une fois la porte sous les yeux — et avant de sortir un outil.</p>
-    <p class="fort">Une estimation au téléphone, un prix ferme sur place, et vous décidez.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
     <h2>Ce qui fait varier un prix</h2>
     <ul class="puces">
       <li><strong>Le type de fermeture</strong> — une porte claquée, une porte fermée à clé et une serrure multipoints ne demandent ni le même temps ni le même matériel.</li>
@@ -519,38 +512,6 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
       <li><strong>Les pièces</strong> — un cylindre standard et un cylindre certifié A2P n'ont pas le même prix d'achat.</li>
       <li><strong>Ce qui a été tenté avant</strong> — une serrure déjà forcée ou percée par quelqu'un d'autre demande souvent un remplacement complet.</li>
     </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Le déroulé</h2>
-    <div class="etapes">
-  <div class="etape"><div class="num">1</div><div>
-    <h3>Vous appelez</h3>
-    <p>Quelqu'un décroche, pas un standard. Vous décrivez la porte, la serrure si vous la connaissez, et ce qui s'est passé.</p>
-  </div></div>
-  <div class="etape"><div class="num">2</div><div>
-    <h3>On vous donne une estimation et un délai</h3>
-    <p>Une fourchette de prix selon ce que vous décrivez, et l'heure à laquelle on peut être chez vous.</p>
-  </div></div>
-  <div class="etape"><div class="num">3</div><div>
-    <h3>On se déplace avec le matériel adapté</h3>
-    <p>Le bon outillage selon le type de serrure annoncé, pour ne pas repartir chercher une pièce.</p>
-  </div></div>
-  <div class="etape"><div class="num">4</div><div>
-    <h3>Diagnostic sur place, prix définitif</h3>
-    <p>On regarde la porte, on vous dit ce qu'on va faire et combien ça coûte. Avant de sortir un outil.</p>
-  </div></div>
-  <div class="etape"><div class="num">5</div><div>
-    <h3>Vous validez, ou pas</h3>
-    <p>Si le prix ne vous convient pas, on repart et vous ne devez rien. Sans discussion.</p>
-  </div></div>
-  <div class="etape"><div class="num">6</div><div>
-    <h3>Intervention, paiement, facture</h3>
-    <p>Carte bancaire acceptée sur place. Facture remise systématiquement, quelle que soit l'heure.</p>
-  </div></div>
-</div>
   </div>
 </section>
 
@@ -598,10 +559,6 @@ footer{background:var(--encre);color:#A9B6C2;padding-block:var(--e5) var(--e4);f
           <li><a href="mentions-legales.html">Mentions légales</a></li>
         </ul>
       </div>
-    </div>
-    <div class="pied-arr">
-      <div class="t">Serrurier par arrondissement</div>
-      <a href="paris-1.html">Paris 1er</a> <a href="paris-2.html">Paris 2e</a> <a href="paris-3.html">Paris 3e</a> <a href="paris-4.html">Paris 4e</a> <a href="paris-5.html">Paris 5e</a> <a href="paris-6.html">Paris 6e</a> <a href="paris-7.html">Paris 7e</a> <a href="paris-8.html">Paris 8e</a> <a href="paris-9.html">Paris 9e</a> <a href="paris-10.html">Paris 10e</a> <a href="paris-11.html">Paris 11e</a> <a href="paris-12.html">Paris 12e</a> <a href="paris-13.html">Paris 13e</a> <a href="paris-14.html">Paris 14e</a> <a href="paris-15.html">Paris 15e</a> <a href="paris-16.html">Paris 16e</a> <a href="paris-17.html">Paris 17e</a> <a href="paris-18.html">Paris 18e</a> <a href="paris-19.html">Paris 19e</a> <a href="paris-20.html">Paris 20e</a>
     </div>
     <div class="pied-bas">
       <span>Serrurier de la Maison — Paris et Île-de-France</span>
