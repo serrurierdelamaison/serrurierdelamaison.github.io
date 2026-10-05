@@ -37,8 +37,7 @@
   --e1:8px; --e2:14px; --e3:22px; --e4:32px; --e5:48px; --e6:68px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+html{-webkit-text-size-adjust:100%;}
 body{
   background:var(--blanc); color:var(--encre);
   font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -112,9 +111,8 @@ section + section{padding-top:0;}
 /* ---------- BOUTONS ---------- */
 .appel{display:block;margin-top:var(--e3);text-decoration:none;
   background:var(--orange);color:#fff;padding:15px 20px 17px;text-align:center;
-  border-radius:var(--r);box-shadow:var(--o2);transition:background .15s ease,transform .1s ease;}
+  border-radius:var(--r);box-shadow:var(--o2);}
 .appel:hover{background:var(--orange-f);}
-.appel:active{transform:translateY(1px);}
 .appel .quoi{display:block;font-size:12px;font-weight:700;letter-spacing:.11em;
   text-transform:uppercase;color:#FBE2CC;}
 .appel .num{display:block;margin-top:3px;font-size:clamp(27px,7vw,34px);
@@ -125,7 +123,7 @@ section + section{padding-top:0;}
 .wa,.ml-btn{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:9px;
   text-decoration:none;border:1.5px solid var(--gris);background:var(--blanc);
   color:var(--encre-d);padding:13px 18px;font-weight:700;font-size:14.5px;
-  border-radius:var(--r);transition:border-color .15s,color .15s;}
+  border-radius:var(--r);}
 .wa:hover,.ml-btn:hover{border-color:var(--bleu);color:var(--bleu);}
 .gages{margin-top:var(--e3);display:flex;flex-wrap:wrap;gap:8px;}
 .gages span{font-size:13px;font-weight:600;color:var(--bleu-f);
@@ -181,8 +179,8 @@ section + section{padding-top:0;}
 .cartes{display:grid;grid-template-columns:1fr;gap:16px;margin-top:var(--e3);}
 .carte{background:var(--blanc);border:1px solid var(--gris);border-radius:var(--r);
   box-shadow:var(--o1);overflow:hidden;text-decoration:none;color:inherit;display:block;
-  padding:20px;transition:box-shadow .18s ease,transform .18s ease;}
-.carte:hover{box-shadow:var(--o2);transform:translateY(-2px);}
+  padding:20px;}
+.carte:hover{box-shadow:var(--o2);}
 .carte .ico{color:var(--bleu);margin-bottom:11px;}
 .carte h3{font-size:19px;font-weight:800;letter-spacing:-.018em;color:var(--encre);}
 .carte p{margin-top:6px;font-size:15.5px;color:var(--encre-d);max-width:none;}
