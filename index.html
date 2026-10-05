@@ -281,13 +281,23 @@ section + section{padding-top:0;}
 .chips a:hover{border-color:var(--bleu);color:var(--bleu);background:var(--bleu-c);}
 
 /* ---------- PHOTOS ---------- */
-.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:var(--e3);}
-.photos figure{background:var(--blanc);border:1px solid var(--gris);
+.photos{display:flex;gap:14px;margin-top:var(--e3);overflow-x:auto;
+  scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.photos::-webkit-scrollbar{display:none;}
+.photos figure{flex:0 0 86%;scroll-snap-align:start;background:var(--blanc);border:1px solid var(--gris);
   border-radius:var(--r);box-shadow:var(--o1);overflow:hidden;}
 .photos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
 .photos figcaption{padding:10px 14px;font-size:13.5px;color:var(--encre-d);}
-.photos .photo-une{grid-column:1 / -1;}
-@media (min-width:880px){.photos{grid-template-columns:repeat(5,1fr);}.photos .photo-une{grid-column:auto;}}
+@media (min-width:620px){.photos figure{flex-basis:calc((100% - 14px)/2);}}
+@media (min-width:880px){.photos figure{flex-basis:calc((100% - 28px)/3);}}
+.c-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:var(--e2);}
+.c-points{display:flex;gap:7px;}
+.c-points button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:var(--gris);cursor:pointer;}
+.c-points button[aria-current="true"]{background:var(--bleu);}
+.c-fleches{display:flex;gap:8px;}
+.c-fleches button{width:42px;height:42px;border:1.5px solid var(--gris);border-radius:50%;
+  background:var(--blanc);color:var(--bleu);font-size:20px;line-height:1;cursor:pointer;}
+.c-fleches button:hover{border-color:var(--bleu);}
 .photo-large{border:1px solid var(--gris);border-radius:var(--r);
   box-shadow:var(--o2);overflow:hidden;margin-top:var(--e3);}
 .photo-large img{width:100%;aspect-ratio:16/9;object-fit:cover;}
@@ -518,7 +528,35 @@ function envoiRappel(f){
   <div class="wrap-large">
     <p class="kicker">En images</p>
     <h2>Nos interventions</h2>
-    <div class="photos"><figure class="photo-une"><img src="photos/cylindre-pose.jpg" alt="Cylindre de sécurité et poignée posés sur une porte" loading="lazy" width="1000" height="750"><figcaption>Cylindre de sécurité posé</figcaption></figure><figure><img src="photos/serrure-demontee.jpg" alt="Serrure en applique démontée pour réparation" loading="lazy" width="1000" height="750"><figcaption>Réparation d'une serrure en applique</figcaption></figure><figure><img src="photos/serrure-applique.jpg" alt="Serrure en applique 3 points avec poignée et verrou" loading="lazy" width="1000" height="750"><figcaption>Serrure 3 points en place</figcaption></figure><figure><img src="photos/decoupe-disqueuse.jpg" alt="Découpe à la disqueuse lors d'une intervention" loading="lazy" width="1000" height="750"><figcaption>Découpe sur une porte métallique</figcaption></figure><figure><img src="photos/outillage.jpg" alt="Outillage du serrurier sur le lieu d'intervention" loading="lazy" width="1000" height="750"><figcaption>Notre outillage sur place</figcaption></figure></div>
+    <div class="photos" id="carrousel" tabindex="0" aria-label="Photos d'interventions, faire défiler"><figure><img src="photos/cylindre-pose.jpg" alt="Cylindre de sécurité et poignée posés sur une porte" loading="lazy" width="1000" height="750"><figcaption>Cylindre de sécurité posé</figcaption></figure><figure><img src="photos/serrure-demontee.jpg" alt="Serrure en applique démontée pour réparation" loading="lazy" width="1000" height="750"><figcaption>Réparation d'une serrure en applique</figcaption></figure><figure><img src="photos/serrure-applique.jpg" alt="Serrure en applique 3 points avec poignée et verrou" loading="lazy" width="1000" height="750"><figcaption>Serrure 3 points en place</figcaption></figure><figure><img src="photos/decoupe-disqueuse.jpg" alt="Découpe à la disqueuse lors d'une intervention" loading="lazy" width="1000" height="750"><figcaption>Découpe sur une porte métallique</figcaption></figure><figure><img src="photos/outillage.jpg" alt="Outillage du serrurier sur le lieu d'intervention" loading="lazy" width="1000" height="750"><figcaption>Notre outillage sur place</figcaption></figure></div>
+    <div class="c-nav">
+      <div class="c-points" aria-label="Choisir une photo"></div>
+      <div class="c-fleches"><button type="button" class="c-prec" aria-label="Photo précédente">&#8249;</button><button type="button" class="c-suiv" aria-label="Photo suivante">&#8250;</button></div>
+    </div>
+<script>
+(function(){
+  var p=document.getElementById("carrousel"); if(!p) return;
+  var f=p.querySelectorAll("figure"), pts=document.querySelector(".c-points"), b=[], auto=null;
+  var calme=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function pas(){ return f.length>1 ? f[1].offsetLeft-f[0].offsetLeft : p.clientWidth; }
+  function aller(i){ p.scrollTo({left:i*pas(),behavior:calme?"auto":"smooth"}); }
+  function courant(){ return Math.round(p.scrollLeft/pas()); }
+  function fin(){ return p.scrollLeft+p.clientWidth>=p.scrollWidth-4; }
+  for(var i=0;i<f.length;i++){ (function(i){
+    var d=document.createElement("button"); d.type="button"; d.setAttribute("aria-label","Photo "+(i+1));
+    d.onclick=function(){ stop(); aller(i); }; pts.appendChild(d); b.push(d); })(i); }
+  function maj(){ var c=courant(), m=Math.round((p.scrollWidth-p.clientWidth)/pas()); b.forEach(function(d,i){ d.hidden=i>m; d.setAttribute("aria-current", i===c?"true":"false"); }); }
+  window.addEventListener("resize",maj);
+  p.addEventListener("scroll",function(){ window.requestAnimationFrame(maj); });
+  document.querySelector(".c-prec").onclick=function(){ stop(); aller(Math.max(0,courant()-1)); };
+  document.querySelector(".c-suiv").onclick=function(){ stop(); fin()?aller(0):aller(courant()+1); };
+  function stop(){ if(auto){ clearInterval(auto); auto=null; } }
+  ["pointerdown","touchstart","focusin","wheel"].forEach(function(e){ p.addEventListener(e,stop,{passive:true}); });
+  p.addEventListener("mouseenter",stop);
+  if(!calme){ auto=setInterval(function(){ fin()?aller(0):aller(courant()+1); },4000); }
+  maj();
+})();
+</script>
   </div>
 </section>
 
